@@ -1,4 +1,4 @@
-name: github pages
+name: ci cd
 
 on:
   push:
@@ -7,8 +7,9 @@ on:
   pull_request:
 
 jobs:
-  deploy:
+  ci_cd:
     runs-on: ubuntu-18.04
+    name: Continuous Integration/Continuous Deployment
     steps:
       - uses: actions/checkout@v2
 
