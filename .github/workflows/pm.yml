@@ -4,7 +4,7 @@ on:
   issues:
     types:
       - opened
-  pull_request_target:
+  pull_request:
     types:
       - opened
 env:
@@ -13,18 +13,9 @@ env:
 jobs:
   assign_one_project:
     runs-on: ubuntu-latest
-    name: Assign to One Project
+    name: Add to Project
     steps:
-      - name: Add NEW issues to Project
+      - name: Add issues/PRs to Project
         uses: srggrs/assign-one-project-github-action@1.2.1
-        if: github.event == 'issue'
         with:
           project: 'https://github.com/orgs/kollavarsham/projects/1'
-          column_name: 'To do'
-
-      - name: Add NEW issues to Project
-        uses: srggrs/assign-one-project-github-action@1.2.1
-        if: github.event == 'pull_request'
-        with:
-          project: 'https://github.com/orgs/kollavarsham/projects/1'
-          column_name: 'In progress'
