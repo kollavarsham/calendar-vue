@@ -1,12 +1,14 @@
 <template>
   <div id="footer">
     <div class="container">
-      <p class="float-left"><a href="#">Version</a></p>
+      <p class="float-left">
+        <small>
+          <a href="#">Version</a>
+        </small>
+      </p>
       <p class="float-right">
         <small>
-          <a href="https://kollavarsham.org/LICENSE.txt"
-            >&copy; 2015-2021 The Kollavarsham Team</a
-          >
+          <a href="https://kollavarsham.org/LICENSE.txt">&copy; 2015-2021 The Kollavarsham Team</a>
         </small>
       </p>
     </div>
@@ -26,8 +28,5 @@
   height: 30px;
   background-color: #f5f5f5;
   z-index: 9;
-}
-#footer * {
-  text-shadow: none;
 }
 </style>
