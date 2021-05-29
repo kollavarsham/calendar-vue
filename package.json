@@ -11,7 +11,8 @@
     "@vue/cli-service": "^4.5.13",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
