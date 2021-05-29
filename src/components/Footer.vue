@@ -1,5 +1,5 @@
 <template>
-  <div id="footer">
+  <footer>
     <div class="container">
       <p class="float-left">
         <small>
@@ -12,7 +12,7 @@
         </small>
       </p>
     </div>
-  </div>
+  </footer>
 </template>
 
 <script>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-#footer {
+footer {
   padding-top: 5px;
   border-top: 1px solid #e5e5e5;
   position: fixed;
