@@ -38,7 +38,6 @@ export default {
 }
 
 .navbar {
-  text-shadow : none;
   background-color: #F8F8F8;
 }
 
