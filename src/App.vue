@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <Calendar />
     <Footer />
   </div>
@@ -8,12 +9,14 @@
 <script>
 import Footer from "./components/Footer";
 import Calendar from "./components/Calendar";
+import Header from "./components/Header"
 
 export default {
   name: 'App',
   components: {
     Footer,
-    Calendar
+    Calendar,
+    Header
   },
 };
 </script>
