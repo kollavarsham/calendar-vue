@@ -1,5 +1,7 @@
 # calendar-vue
 
+[![ci-cd](https://github.com/kollavarsham/calendar-vue/actions/workflows/ci.yml/badge.svg)](https://github.com/kollavarsham/calendar-vue/actions/workflows/ci.yml)
+
 ## Project setup
 ```
 npm install
