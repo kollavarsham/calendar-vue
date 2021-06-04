@@ -15,22 +15,24 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: 'Footer'
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Footer extends Vue {
 }
 </script>
 
 <style scoped>
 footer {
-  padding-top: 5px;
-  border-top: 1px solid #e5e5e5;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  background-color: #f5f5f5;
-  z-index: 9;
+  padding-top      : 5px;
+  border-top       : 1px solid #e5e5e5;
+  position         : fixed;
+  left             : 0;
+  bottom           : 0;
+  width            : 100%;
+  height           : 30px;
+  background-color : #f5f5f5;
+  z-index          : 9;
 }
 </style>

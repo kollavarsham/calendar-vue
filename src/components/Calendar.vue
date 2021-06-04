@@ -1,12 +1,14 @@
 <template>
 <div class="container">
-<img src="../assets/underconstruction.png" alt="Under Construction">
-</div>    
+<img src="../assets/wip.png" alt="Under Construction">
+</div>
 </template>
 
-<script>
-export default {
-  name: 'Calendar',
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+
+@Component
+export default class Calendar extends Vue {
 }
 </script>
 
