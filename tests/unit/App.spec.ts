@@ -6,8 +6,8 @@ import Header from '@/components/Header.vue';
 import Calendar from '@/components/Calendar.vue';
 import Footer from '@/components/Footer.vue';
 
-describe('Home.vue', () => {
-  it('Check if App component renders all UI Elements', () => {
+describe('Home.vue', (): void => {
+  it('Check if App component renders all UI Elements', (): void => {
     const wrapper: Wrapper<Home> = mount(Home);
 
     expect(wrapper.contains(Header)).toBe(true);
