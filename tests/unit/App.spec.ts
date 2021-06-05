@@ -1,4 +1,4 @@
-import { mount } from '@vue/test-utils';
+import { mount, Wrapper } from '@vue/test-utils';
 
 // components
 import Home from '@/views/Home.vue';
@@ -8,7 +8,7 @@ import Footer from '@/components/Footer.vue';
 
 describe('Home.vue', () => {
   it('Check if App component renders all UI Elements', () => {
-    const wrapper = mount(Home);
+    const wrapper: Wrapper<Home> = mount(Home);
 
     expect(wrapper.contains(Header)).toBe(true);
     expect(wrapper.contains(Calendar)).toBe(true);
