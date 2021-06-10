@@ -1,7 +1,7 @@
 module.exports = {
   devServer: {
     host: 'localhost',
-    hot: true,
+    hot: process.env.NODE_ENV !== 'production',
   },
   pages: {
     index: {
