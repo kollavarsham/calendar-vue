@@ -3,7 +3,7 @@
     <div class="container">
       <p class="float-left">
         <small>
-          <a href="#">Version</a>
+          <a href="https://kollavarsham.org/calendar-vue/version.json">Version</a>
         </small>
       </p>
       <p class="float-right">
