@@ -12,6 +12,8 @@ jobs:
     name: Continuous Integration/Continuous Deployment
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # necessary for capturing 'version' below
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -29,6 +31,18 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+
+      - name: Capture version
+        if: github.ref == 'refs/heads/main'
+        id: version
+        run: |
+          echo "::set-output name=TEXT::$(git describe --always --long)"
+          echo "::set-output name=COMMITISH::$(git rev-parse HEAD)"
+
+      - name: Save version
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo '{ "text": "${{ steps.version.outputs.TEXT }}", "commitish": "${{ steps.version.outputs.COMMITISH }}" }' > ./dist/version.json
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
