@@ -36,7 +36,7 @@
     "@vue/test-utils": "^1.2.0",
     "eslint": "^6.8.0",
     "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.10.0",
     "lint-staged": "^9.5.0",
     "ts-jest": "^24.3.0",
     "typescript": "~4.3.2",
