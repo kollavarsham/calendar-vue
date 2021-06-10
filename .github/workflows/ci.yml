@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "::set-output name=TEXT::$(git describe --always --long)"
           echo "::set-output name=COMMITISH::$(git rev-parse HEAD)"
-          echo "::set-output name=DATE::$(git rev-parse HEAD)"
+          echo "::set-output name=DATE::$(date -u +"%Y-%m-%dT%TZ")"
 
       - name: Save version
         if: github.ref == 'refs/heads/main'
