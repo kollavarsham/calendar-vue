@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import fetch from "node-fetch"
+import fetch from 'node-fetch';
 
 @Component
 export default class Footer extends Vue {
