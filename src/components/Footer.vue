@@ -3,7 +3,7 @@
     <div class="container">
       <p class="float-left">
         <small>
-          <a href="https://kollavarsham.org/calendar-vue/version.json">Version</a>
+          <a href="https://kollavarsham.org/calendar-vue/version.json">{{ this.version }}</a>
         </small>
       </p>
       <p class="float-right">
@@ -20,6 +20,21 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Footer extends Vue {
+  public version = '';
+
+  readJson(): void {
+    // http://localhost:8080
+    fetch('https://kollavarsham.org/calendar-vue/version.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((json) => {
+        this.version = json.text;
+      });
+  }
 }
 </script>
 
