@@ -37,7 +37,9 @@ export default class Footer extends Vue {
       });
   }
 
-  public runMethod = this.readJson()
+  created(): void {
+    this.readJson();
+  }
 }
 </script>
 
