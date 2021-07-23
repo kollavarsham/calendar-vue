@@ -26,13 +26,13 @@ export default class Footer extends Vue {
   readJson(): void {
     // http://localhost:8080
     fetch('https://kollavarsham.org/calendar-vue/version.json')
-      .then((response) => {
+      .then((response: { ok: any; status: any; json: () => any; }) => {
         if (!response.ok) {
           throw new Error(`HTTP error ${response.status}`);
         }
         return response.json();
       })
-      .then((json) => {
+      .then((json: { text: string; }) => {
         this.version = json.text;
       });
   }
