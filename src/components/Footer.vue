@@ -3,7 +3,7 @@
     <div class="container">
       <p class="float-left">
         <small>
-          <a href="https://kollavarsham.org/calendar-vue/version.json">Version</a>
+          <a href="https://kollavarsham.org/calendar-vue/version.json">{{ this.version }}</a>
         </small>
       </p>
       <p class="float-right">
@@ -17,9 +17,26 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import axios from 'axios';
 
 @Component
 export default class Footer extends Vue {
+  public version = '';
+
+  readJson(): void {
+    axios.get('https://kollavarsham.org/calendar-vue/version.json')
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error('HTTP error!');
+        } else {
+          this.version = res.data.text;
+        }
+      });
+  }
+
+  created(): void {
+    this.readJson();
+  }
 }
 </script>
 
