@@ -59,7 +59,9 @@
     "parserOptions": {
       "ecmaVersion": 2020
     },
-    "rules": {},
+    "rules": {
+      "no-lonely-if": 0
+    },
     "overrides": [
       {
         "files": [
