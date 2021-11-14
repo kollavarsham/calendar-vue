@@ -7,6 +7,7 @@ import Home from '@/views/Home.vue';
 import Header from '@/components/Header.vue';
 import Calendar from '@/components/Calendar.vue';
 import Footer from '@/components/Footer.vue';
+import YearPicker from '@/components/YearPicker.vue';
 
 // plugins
 Vue.use(BootstrapVue);
@@ -16,6 +17,7 @@ describe('Home.vue', (): void => {
     const wrapper: Wrapper<Home> = mount(Home);
 
     expect(wrapper.findComponent(Header)).not.toBeNull();
+    expect(wrapper.findComponent(YearPicker)).not.toBeNull();
     expect(wrapper.findComponent(Calendar)).not.toBeNull();
     expect(wrapper.findComponent(Footer)).not.toBeNull();
   });
