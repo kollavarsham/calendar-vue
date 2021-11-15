@@ -11,18 +11,18 @@ export default {
   },
   modules: {},
   mutations: {
-    increment(state: State) {
+    increment(state: State): void {
       state.currentYear++;
     },
-    decrement(state: State) {
+    decrement(state: State): void {
       state.currentYear--;
     },
   },
   actions: {
-    increment(ctx: ActionContext<State, State>) {
+    increment(ctx: ActionContext<State, State>): void {
       ctx.commit('increment');
     },
-    decrement(ctx: ActionContext<State, State>) {
+    decrement(ctx: ActionContext<State, State>): void {
       ctx.commit('decrement');
     },
   },
