@@ -6,8 +6,8 @@ export default {
     currentYear: new Date().getFullYear(),
   },
   getters: {
-    getPreviousYear: (state: State) => state.currentYear - 1,
-    getNextYear: (state: State) => state.currentYear + 1,
+    getPreviousYear: (state: State): number => state.currentYear - 1,
+    getNextYear: (state: State): number => state.currentYear + 1,
   },
   modules: {},
   mutations: {
