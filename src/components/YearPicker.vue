@@ -2,20 +2,11 @@
 <div class="container outer">
   <div class="container box">
     <p class="year">{{ this.currentYear }}</p>
-    <button class="btn btn-primary float-left" @click="decrement()" v-if="this.currentYear >= 1901">
-      &lt; {{ this.getPreviousYear }}
+    <button class="btn btn-primary float-left" :disabled="isLowerLimit" @click="decrement()">
+      &lt; {{ this.previousYear }}
     </button>
-    <button v-else class="btn btn-disabled">
-      &lt; {{ this.getPreviousYear }}
-    </button>
-    <button class="btn btn-primary float-right"
-      @click="increment()"
-      v-if="this.currentYear <= 2049"
-    >
-      {{ this.getNextYear }} &gt;
-    </button>
-    <button v-else class="btn btn-disabled float-right">
-      &gt; {{ this.getNextYear }}
+    <button class="btn btn-primary float-right" :disabled="isUpperLimit" @click="increment()">
+      {{ this.nextYear }} &gt;
     </button>
   </div>
 </div>
@@ -31,9 +22,13 @@ import { State as StateType } from '@/types';
 export default class YearPicker extends Vue {
   @State currentYear!: StateType['currentYear'];
 
-  @Getter getPreviousYear!: number;
+  @Getter previousYear!: number;
 
-  @Getter getNextYear!: number;
+  @Getter nextYear!: number;
+
+  @Getter isUpperLimit!: boolean;
+
+  @Getter isLowerLimit!: boolean;
 
   @Action increment!: ActionContext<StateType, StateType>;
 

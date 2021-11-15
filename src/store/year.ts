@@ -6,16 +6,19 @@ export default {
     currentYear: new Date().getFullYear(),
   },
   getters: {
-    getPreviousYear: (state: State): number => state.currentYear - 1,
-    getNextYear: (state: State): number => state.currentYear + 1,
+    previousYear: (state: State): number => state.currentYear - 1,
+    nextYear: (state: State): number => state.currentYear + 1,
+    isLowerLimit: (state: State): boolean => !!(state.currentYear < 1901),
+    isUpperLimit: (state: State): boolean => !!(state.currentYear > 2049),
   },
   modules: {},
   mutations: {
     increment(state: State): void {
-      state.currentYear++;
+      state.currentYear += 1;
     },
+
     decrement(state: State): void {
-      state.currentYear--;
+      state.currentYear -= 1;
     },
   },
   actions: {
