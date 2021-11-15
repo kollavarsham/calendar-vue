@@ -24,18 +24,20 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Action, Getter, State } from 'vuex-class';
+import { ActionContext } from 'vuex';
+import { State as StateType } from '@/types';
 
 @Component
 export default class YearPicker extends Vue {
-  @State currentYear: any;
+  @State currentYear!: StateType['currentYear'];
 
-  @Getter getPreviousYear: any;
+  @Getter getPreviousYear!: number;
 
-  @Getter getNextYear: any;
+  @Getter getNextYear!: number;
 
-  @Action increment: any;
+  @Action increment!: ActionContext<StateType, StateType>;
 
-  @Action decrement: any;
+  @Action decrement!: ActionContext<StateType, StateType>;
 }
 </script>
 
