@@ -1,12 +1,21 @@
 <template>
 <div class="container outer">
   <div class="container box">
-    <p class="year">{{ this.year }}</p>
-    <button class="btn btn-primary float-left" @click="onClick($event, mode=true)">
-      &lt; {{ this.prevYear }}
+    <p class="year">{{ this.currentYear }}</p>
+    <button class="btn btn-primary float-left" @click="decrement()" v-if="this.currentYear >= 1901">
+      &lt; {{ this.getPreviousYear }}
     </button>
-    <button class="btn btn-primary float-right" @click="onClick($event, mode=false)">
-      {{ this.nextYear }} &gt;
+    <button v-else class="btn btn-disabled">
+      &lt; {{ this.getPreviousYear }}
+    </button>
+    <button class="btn btn-primary float-right"
+      @click="increment()"
+      v-if="this.currentYear <= 2049"
+    >
+      {{ this.getNextYear }} &gt;
+    </button>
+    <button v-else class="btn btn-disabled float-right">
+      &gt; {{ this.getNextYear }}
     </button>
   </div>
 </div>
@@ -14,31 +23,19 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Action, Getter, State } from 'vuex-class';
 
 @Component
 export default class YearPicker extends Vue {
-  public year: number = new Date().getFullYear();
+  @State currentYear: any;
 
-  public prevYear: number = this.year - 1;
+  @Getter getPreviousYear: any;
 
-  public nextYear: number = this.year + 1;
+  @Getter getNextYear: any;
 
-  onClick(event: Event | undefined, mode: boolean): void {
-    // if true; previous year button is clicked
-    if (mode === true) {
-      if (this.year > 1900) {
-        this.year -= 1;
-        this.prevYear -= 1;
-        this.nextYear -= 1;
-      }
-    } else if (mode === false) {
-      if (this.year < 2050) {
-        this.year += 1;
-        this.prevYear += 1;
-        this.nextYear += 1;
-      }
-    }
-  }
+  @Action increment: any;
+
+  @Action decrement: any;
 }
 </script>
 
