@@ -1,5 +1,5 @@
 {
-    "singleQuote": true,
-    "tabWidth": 2,
-    "extends": ["airbnb"]
+  "singleQuote": true,
+  "tabWidth": 2,
+  "extends": ["airbnb"]
 }
