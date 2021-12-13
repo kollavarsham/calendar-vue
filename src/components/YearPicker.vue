@@ -1,15 +1,23 @@
 <template>
-<div class="container outer">
-  <div class="container box">
-    <p class="year">{{ this.currentYear }}</p>
-    <button class="btn btn-primary float-left" :disabled="isLowerLimit" @click="decrement()">
-      &lt; {{ this.previousYear }}
-    </button>
-    <button class="btn btn-primary float-right" :disabled="isUpperLimit" @click="increment()">
-      {{ this.nextYear }} &gt;
-    </button>
+  <div class="container outer">
+    <div class="container box">
+      <p class="year">{{ this.currentYear }}</p>
+      <button
+        class="btn btn-primary float-left"
+        :disabled="isLowerLimit"
+        @click="decrement()"
+      >
+        &lt; {{ this.previousYear }}
+      </button>
+      <button
+        class="btn btn-primary float-right"
+        :disabled="isUpperLimit"
+        @click="increment()"
+      >
+        {{ this.nextYear }} &gt;
+      </button>
+    </div>
   </div>
-</div>
 </template>
 
 <script lang="ts">
