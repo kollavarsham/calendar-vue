@@ -1,5 +1,6 @@
 import { ActionContext } from 'vuex';
 import { State } from '@/types';
+import { MAX_YEAR, MIN_YEAR } from '@/constants';
 
 export default {
   state: {
@@ -8,8 +9,8 @@ export default {
   getters: {
     previousYear: (state: State): number => state.currentYear - 1,
     nextYear: (state: State): number => state.currentYear + 1,
-    isLowerLimit: (state: State): boolean => !!(state.currentYear < 1901),
-    isUpperLimit: (state: State): boolean => !!(state.currentYear > 2049),
+    isLowerLimit: (state: State): boolean => !!(state.currentYear < MIN_YEAR),
+    isUpperLimit: (state: State): boolean => !!(state.currentYear > MAX_YEAR),
   },
   modules: {},
   mutations: {

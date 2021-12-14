@@ -1,5 +1,4 @@
 <template>
-
   <div>
     <b-navbar toggleable="lg" type="light" variant="faded">
       <b-navbar-brand href="/">kollavarsham.org</b-navbar-brand>
@@ -9,9 +8,15 @@
         <b-navbar-nav>
           <b-nav-item href="/">Home</b-nav-item>
           <b-nav-item href="/calendar">Calendar</b-nav-item>
-          <b-nav-item href="https://kollavarsham.org/implementations">Implementations</b-nav-item>
-          <b-nav-item href="https://github.com/kollavarsham" target="_blank">GitHub</b-nav-item>
-          <b-nav-item href="mailto:info@kollavarsham.org">Contact Us</b-nav-item>
+          <b-nav-item href="https://kollavarsham.org/implementations">
+            Implementations
+          </b-nav-item>
+          <b-nav-item href="https://github.com/kollavarsham" target="_blank">
+            GitHub
+          </b-nav-item>
+          <b-nav-item href="mailto:info@kollavarsham.org">
+            Contact Us
+          </b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
@@ -30,20 +35,19 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Header extends Vue {
-}
+export default class Header extends Vue {}
 </script>
 
 <style scoped>
 * {
-  font-family : 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
-  background-color : #F8F8F8;
+  background-color: #f8f8f8;
 }
 
 .navbar * {
-  color : #777777;
+  color: #777777;
 }
 </style>
