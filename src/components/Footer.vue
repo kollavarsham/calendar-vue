@@ -11,7 +11,7 @@
       <p class="float-right">
         <small>
           <a href="https://kollavarsham.org/LICENSE.txt">
-            &copy; 2015-2021 The Kollavarsham Team
+            &copy; 2015-2022 The Kollavarsham Team
           </a>
         </small>
       </p>
